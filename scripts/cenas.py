@@ -76,7 +76,7 @@ class CenaJogo:
         self.jogador.mover(teclas)
 
         # ----- FASES (4 fases agora) -----
-        if self.pontos >= 150:
+        if self.pontos >= 100:
             nova_fase = 4
         elif self.pontos >= 75:
             nova_fase = 3
@@ -92,7 +92,7 @@ class CenaJogo:
         self.fase = nova_fase
 
         # velocidade base das fases
-        bases = {1: 0, 2: 1.5, 3: 4, 4: 5.5}
+        bases = {1: 0.5, 2: 1.5, 3: 4, 4: 5.5}
 
         base = bases[self.fase]
 
