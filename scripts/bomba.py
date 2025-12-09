@@ -14,16 +14,26 @@ class Bomba:
     def reset(self):
         estrada_x = 120
         estrada_largura = 260
-        min_x = estrada_x + 20
-        max_x = estrada_x + estrada_largura - 20
 
-        self.rect = self.img.get_rect(center=(random.randint(min_x, max_x), -50))
+        min_x = estrada_x + 10
+        max_x = estrada_x + estrada_largura - self.img.get_width() - 10
+
+        # posição horizontal aleatória
+        self.rect = self.img.get_rect()
+        self.rect.x = random.randint(min_x, max_x)
+
+        # posição vertical aleatória para evitar alinhamento
+        self.rect.y = random.randint(-200, -50)  # <-- ESSA LINHA É A MAIS IMPORTANTE
+
         self.y = float(self.rect.y)
+
+
 
     def mover(self, vel_bonus=0):
         self.y += 2 + vel_bonus
         self.rect.y = int(self.y)
-        if self.rect.y > 650:
+
+        if self.rect.y > 600:
             self.reset()
             return True
         return False

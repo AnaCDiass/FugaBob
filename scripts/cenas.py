@@ -77,9 +77,9 @@ class CenaJogo:
 
         if self.pontos >= 100:
             nova_fase = 4
-        elif self.pontos >= 75:
+        elif self.pontos >= 50:
             nova_fase = 3
-        elif self.pontos >= 25:
+        elif self.pontos >= 20:
             nova_fase = 2
         else:
             nova_fase = 1
