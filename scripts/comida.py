@@ -6,15 +6,15 @@ class Comida:
 
         # tamanho específico por tipo
         if tipo == "hamburguer":
-            desired_w = 40  # um pouco menor
+            desired_w = 40  
         elif tipo == "refri":
-            desired_w = 50  # um pouco maior
+            desired_w = 50  
         else:
-            desired_w = 45  # padrão
+            desired_w = 45 
 
         scale = desired_w / img.get_width()
         new_size = (int(img.get_width() * scale), int(img.get_height() * scale))
-        # smoothscale para melhor qualidade
+        # melhor qualidade
         self.img = pygame.transform.smoothscale(img, new_size)
 
         self.reset()

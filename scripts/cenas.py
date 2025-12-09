@@ -49,13 +49,13 @@ class CenaJogo:
         self.fundo = pygame.transform.scale(self.fundo, (500, 600))
         self.jogador = Jogador()
 
-        # high score começa em 0
+        #começa em 0
         self.high_score = 0
 
         self.reset()
 
     def reset(self):
-        # Atualiza high score ao morrer
+        # Atualiza ao morrer
         if hasattr(self, "pontos") and self.pontos > self.high_score:
             self.high_score = self.pontos
 
@@ -75,7 +75,6 @@ class CenaJogo:
         teclas = pygame.key.get_pressed()
         self.jogador.mover(teclas)
 
-        # ----- FASES (4 fases agora) -----
         if self.pontos >= 100:
             nova_fase = 4
         elif self.pontos >= 75:
@@ -140,11 +139,10 @@ class CenaJogo:
         fase_txt = self.font.render(f"Fase: {self.fase}", True, (255, 255, 0))
         self.tela.blit(fase_txt, (10, 50))
 
-        # ---- HIGH SCORE NA LATERAL DIREITA ----
         hs = self.font.render(f"Recorde: {self.high_score}", True, (0, 255, 0))
         hs_rect = hs.get_rect(topright=(490, 10))
         self.tela.blit(hs, hs_rect)
-        # ---------------------------------------
+
 
         # aviso final
         if self.mostrar_aviso:

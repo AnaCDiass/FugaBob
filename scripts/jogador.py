@@ -5,7 +5,7 @@ class Jogador:
         img = pygame.image.load("assets/bob.png").convert_alpha()
 
         # aumenta um pouco e suaviza
-        desired_w = 70  # antes era 60
+        desired_w = 70  
         scale = desired_w / img.get_width()
         new_size = (int(img.get_width() * scale), int(img.get_height() * scale))
         self.img = pygame.transform.smoothscale(img, new_size)
@@ -19,7 +19,7 @@ class Jogador:
         if teclas[pygame.K_RIGHT]:
             self.rect.x += self.vel
 
-        # limites da estrada, chegando quase nas bordas
+        # limites da estrada
         estrada_x = 120
         estrada_largura = 260
         min_x = estrada_x

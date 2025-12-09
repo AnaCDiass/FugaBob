@@ -7,15 +7,15 @@ def gera_fundo(caminho, width=500, height=600):
     surf = pygame.Surface((width, height))
 
     # céu
-    surf.fill((135, 206, 235))  # azul claro
+    surf.fill((135, 206, 235))  
 
     # chão
-    pygame.draw.rect(surf, (34, 139, 34), (0, height - 100, width, 100))  # verde
+    pygame.draw.rect(surf, (34, 139, 34), (0, height - 100, width, 100)) 
 
     # faixa de jogo central (onde o Bob vai pegar comidas)
     faixa_x = 100
     faixa_largura = 300
-    pygame.draw.rect(surf, (210, 180, 140), (faixa_x, 0, faixa_largura, height))  # marrom clarinho
+    pygame.draw.rect(surf, (210, 180, 140), (faixa_x, 0, faixa_largura, height)) 
 
     # salvar
     pygame.image.save(surf, caminho)
